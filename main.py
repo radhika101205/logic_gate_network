@@ -31,9 +31,9 @@ def train():
         out = model(X)
         end = time.perf_counter()
         acc = accuracy(out, y)
-        print(f"\n🧪 Final Accuracy on sample batch: {acc:.4f}")
-        print(f"⏱️ Inference time for {len(X)} samples: {(end - start):.6f} seconds")
-        print(f"⏱️ Average inference time per sample: {(end - start)/len(X)*1e6:.2f} µs")
+        print(f"\n Final Accuracy on sample batch: {acc:.4f}")
+        print(f" Inference time for {len(X)} samples: {(end - start):.6f} seconds")
+        print(f" Average inference time per sample: {(end - start)/len(X)*1e6:.2f} µs")
 
 if __name__ == "__main__":
     train()

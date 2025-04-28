@@ -14,6 +14,12 @@ It supports:
 
 ```
 y = ((X1 AND NOT X2) OR (X3 XOR X4)) AND (X5 OR NOT X6) OR (X7 == X8)
+
+This logic rule is used to assign labels (`y`) to a dataset of shape `[1000 x 8]`, where each row is a randomly generated binary input (0s and 1s).
+
+The Logic Gate Network (LGN) is then trained to learn this rule using only combinations of **differentiable binary logic gates**. Each neuron in the LGN selects two input bits and applies a weighted combination of 16 logic operations (e.g., AND, OR, XOR, NAND). Through training, the network learns which gate combinations best model the logical relationship between inputs and the corresponding labels.
+
+Over several epochs, the model adjusts the softmax-distributed weights over the logic gates to approximate the logic rule. Once trained, the LGN can infer the label for new binary inputs based purely on learned logic gate behavior, offering both interpretability and efficiency.
 ```
 
 The model is trained to learn this rule from scratch given binary inputs.

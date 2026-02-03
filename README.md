@@ -30,13 +30,16 @@ The model is trained to learn this rule from scratch given binary inputs.
 
 ```
 lgn_binary_classifier/
-├── config.py           # Hyperparameters
-├── data.py             # Logic rule-based dataset generation
-├── logic_ops.py        # Differentiable logic gate definitions
-├── model.py            # LogicGateLayer and LogicGateNet
-├── utils.py            # Accuracy metric
-├── main.py             # Training loop, evaluation, inference timing
-└── README.md           # This file
+├── config.py
+├── data.py
+├── logic_ops.py
+├── model.py
+├── utils.py
+├── main.py
+├── logic_circuits/
+│   ├── cancer_logic.circ          # Logic circuit for cancer classification
+│   └── numerical_cluster.circ     # Logic circuit for numerical clustering
+└── README.md
 ```
 
 ---
@@ -96,5 +99,29 @@ Epoch 50, Accuracy: 0.9902
 ## Exporting Dataset
 
 Running the training script will also export the dataset to a CSV file:
+
+---
+
+## Logic Circuit Implementations (.circ files)
+
+This repository also includes logic circuit designs created using **Logisim / Logisim-Evolution**.
+
+### Included Circuits
+- `cancer_logic.circ`  
+  Implements the logical decision-making structure used for cancer classification.
+
+- `numerical_cluster.circ`  
+  Represents logic-based clustering behavior for numerical data.
+
+### How to Open
+GitHub cannot preview `.circ` files directly.
+
+To view or simulate these circuits:
+1. Install **Logisim** or **Logisim-Evolution**
+2. Open the `.circ` file from the `logic_circuits/` directory
+3. Run the simulation to observe gate-level behavior
+
+These circuits provide a **hardware-level interpretation** of the logic learned by the Logic Gate Network (LGN), bridging software-based learning and digital logic design.
+
 
 
